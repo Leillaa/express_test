@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  weather:
+    build: .
+    env_file:
+      - ./.env
+    environment:
+      API_KEY: "${API_KEY}"
+    volumes:
+      - ./weather_data:/app/weather_data
+    restart: always
